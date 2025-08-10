@@ -6,9 +6,11 @@
 Failed to load module script: Expected a JavaScript-or-Wasm module script but the server responded with a MIME type of "application/octet-stream". Strict MIME type checking is enforced for module scripts per HTML spec.
 ```
 
-## 解决方案
+## 🔧 快速解决方案
 
-这个问题是因为 Web 服务器没有正确配置 JavaScript 模块的 MIME 类型。我已经为不同的部署平台创建了相应的配置文件：
+**最重要：确保 JavaScript 文件以正确的 MIME 类型提供服务！**
+
+我已经为几乎所有主流部署平台创建了配置文件，这些文件会自动包含在构建输出中：
 
 ### 1. Netlify 部署
 - 使用 `public/_headers` 文件
@@ -25,7 +27,12 @@ Failed to load module script: Expected a JavaScript-or-Wasm module script but th
 - 已包含在构建输出的 `dist` 目录中
 - 确保 Apache 启用了 `mod_headers` 和 `mod_rewrite`
 
-### 4. Nginx 服务器
+### 4. IIS 服务器
+- 使用 `public/web.config` 文件
+- 已自动包含在构建输出中
+- 确保 IIS 启用了 URL Rewrite 模块
+
+### 5. Nginx 服务器
 如果使用 Nginx，请在服务器配置中添加：
 
 ```nginx
@@ -50,6 +57,11 @@ server {
     }
 }
 ```
+
+### 6. Node.js/Express 服务器
+- 使用项目根目录下的 `server.js` 文件
+- 运行 `node server.js` 启动服务器
+- 已配置正确的 MIME 类型和静态文件服务
 
 ### 5. 其他服务器
 确保您的 Web 服务器配置了以下 MIME 类型：
