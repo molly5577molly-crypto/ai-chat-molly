@@ -73,7 +73,7 @@ export const ChatContainer: React.FC = () => {
       await ChatAPI.sendMessageStream(
         content,
         (chunk: string) => {
-          currentAssistantMessageRef.current += chunk;
+          currentAssistantMessageRef.current = chunk;
           updateLastMessage(currentAssistantMessageRef.current);
         },
         () => {
