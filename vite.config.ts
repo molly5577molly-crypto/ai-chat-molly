@@ -7,27 +7,26 @@ export default defineConfig({
   server: {
     port: 3000,
     open: true,
-    cors: true,
-    fs: {
-      strict: false
+    host: 'localhost',
+    strictPort: false,
+    hmr: {
+      port: 3001
     }
   },
   build: {
+    target: 'esnext',
+    minify: 'esbuild',
     rollupOptions: {
       output: {
-        format: 'es',
-        manualChunks: undefined
+        format: 'es'
       }
-    },
-    assetsDir: 'assets',
-    sourcemap: true
+    }
+  },
+  resolve: {
+    extensions: ['.mjs', '.js', '.ts', '.jsx', '.tsx', '.json']
   },
   optimizeDeps: {
-    include: ['react', 'react-dom', 'react/jsx-runtime']
-  },
-  esbuild: {
-    loader: 'tsx',
-    include: /src\/.*\.[tj]sx?$/,
-    exclude: []
+    force: true,
+    include: ['react', 'react-dom']
   }
 })
