@@ -18,7 +18,10 @@ export default defineConfig({
     minify: 'esbuild',
     rollupOptions: {
       output: {
-        format: 'es'
+        format: 'es',
+        entryFileNames: 'assets/[name]-[hash].js',
+        chunkFileNames: 'assets/[name]-[hash].js',
+        assetFileNames: 'assets/[name]-[hash].[ext]'
       }
     }
   },
