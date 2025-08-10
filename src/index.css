@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+  
+  html {
+    height: 100%;
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: #f8fafc;
+  }
+  
+  #root {
+    height: 100%;
+  }
+}
+
+@layer components {
+  .chat-message {
+    @apply max-w-none prose prose-sm sm:prose lg:prose-lg;
+  }
+  
+  .chat-message p {
+    @apply mb-2 last:mb-0;
+  }
+  
+  .chat-message pre {
+    @apply bg-gray-100 rounded-lg p-3 overflow-x-auto;
+  }
+  
+  .chat-message code {
+    @apply bg-gray-100 px-1 py-0.5 rounded text-sm;
+  }
+}
