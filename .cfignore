@@ -1,0 +1,6 @@
+# Ignore non-frontend folders and worker configs for Cloudflare Pages
+openai-graphql-worker/
+functions/
+wrangler.toml
+**/wrangler.toml
+

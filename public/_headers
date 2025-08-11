@@ -1,39 +1,16 @@
-# Cloudflare Pages headers file
 /*
   X-Frame-Options: DENY
-  X-XSS-Protection: 1; mode=block
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
 
-# JavaScript and module files for Cloudflare Pages
+/*
+  Cache-Control: public, max-age=600
+
 /assets/*.js
   Content-Type: application/javascript; charset=utf-8
 
-*.js
+/assets/*.mjs
   Content-Type: application/javascript; charset=utf-8
-
-*.mjs
-  Content-Type: application/javascript; charset=utf-8
-
-*.jsx
-  Content-Type: application/javascript; charset=utf-8
-
-# Ensure module scripts are correctly handled
-/assets/*
-  Content-Type: application/javascript; charset=utf-8
-
-# CSS files
-*.css
-  Content-Type: text/css; charset=utf-8
 
 /assets/*.css
   Content-Type: text/css; charset=utf-8
-
-# JSON files
-*.json
-  Content-Type: application/json; charset=utf-8
-
-# Wasm files
-*.wasm
-  Content-Type: application/wasm
-
