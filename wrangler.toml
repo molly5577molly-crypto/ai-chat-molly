@@ -1,0 +1,23 @@
+name = "ai-chat-molly"
+compatibility_date = "2024-01-15"
+
+[build]
+command = "npm run build"
+cwd = "."
+watch_dir = "src"
+
+[[rules]]
+type = "Text"
+globs = ["**/*.js", "**/*.mjs"]
+fallthrough = true
+
+[[rules]]
+type = "Text"
+globs = ["**/*.css"]
+fallthrough = true
+
+[env.production]
+name = "ai-chat-molly-prod"
+
+[env.preview]
+name = "ai-chat-molly-preview"
