@@ -39,3 +39,4 @@ app.listen(PORT, () => {
   console.log(`🚀 Test server running on http://localhost:${PORT}`);
   console.log('📝 Check the browser console for MIME type verification');
 });
+
