@@ -1,0 +1,47 @@
+# Cloudflare Pages Headers Configuration
+# 修复 MIME 类型问题
+
+# CSS 文件
+/assets/*.css
+  Content-Type: text/css; charset=utf-8
+
+# JavaScript 文件
+/assets/*.js
+  Content-Type: application/javascript; charset=utf-8
+
+# JavaScript 模块文件
+/assets/*.mjs
+  Content-Type: application/javascript; charset=utf-8
+
+# JSON 文件
+/assets/*.json
+  Content-Type: application/json; charset=utf-8
+
+# 字体文件
+/assets/*.woff
+  Content-Type: font/woff
+
+/assets/*.woff2
+  Content-Type: font/woff2
+
+/assets/*.ttf
+  Content-Type: font/ttf
+
+# 图片文件
+/assets/*.svg
+  Content-Type: image/svg+xml
+
+/assets/*.png
+  Content-Type: image/png
+
+/assets/*.jpg
+  Content-Type: image/jpeg
+
+/assets/*.jpeg
+  Content-Type: image/jpeg
+
+# 安全头部（可选）
+/*
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  X-XSS-Protection: 1; mode=block

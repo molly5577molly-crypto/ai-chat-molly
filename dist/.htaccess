@@ -35,3 +35,4 @@ Header always set Referrer-Policy "strict-origin-when-cross-origin"
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteRule . /index.html [L]
 </IfModule>
+
